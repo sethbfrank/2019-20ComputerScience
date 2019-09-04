@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=Hello
+comment0.text=\r\n\ This\ class\ prints\ out\ a\ personalized\ greeting.\r\n\ \r\n\ @author\ (Seth\ Frank)\r\n\ @version\ (v1.0\ 7/4/19)\r\n
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+comment1.text=This\ is\ the\ main\ method\ which\ what\ you\ run\ to\ see\ results\ in\ the\r\n\ BlueJ\ terminal\ window\r\n
+numComments=2
