@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=AdvancedMethods
+comment1.params=
+comment1.target=void\ main()
+comment2.params=num1\ num2
+comment2.target=void\ printNumbers(int,\ int)
+comment3.params=num1\ num2\ num3
+comment3.target=int\ average(int,\ int,\ int)
+comment4.params=num1\ num2
+comment4.target=int\ remainderOfNumbers(int,\ int)
+numComments=5
