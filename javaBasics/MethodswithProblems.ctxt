@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=MethodswithProblems
+comment0.text=\r\n\ By\ RUNNING\ the\ code,\ determine\ the\ problems\ with\ these\ methods\ and\ discuss\ possible\ solutions\ with\ a\ classmate.\r\n\ Then\ choose\ a\ potential\ solution\ and\ test\ it.\r\n\r\n
+comment1.params=temp1\ temp2\ temp3
+comment1.target=double\ getAverageTemp(double,\ double,\ double)
+comment1.text=\r\n\ Given\ three\ temperature\ readings,\ return\ the\ correct\ average\ temp\r\n
+comment2.params=
+comment2.target=void\ tiredMessage()
+comment2.text=\r\n\ prints\ a\ message\ based\ tiredness\ that\ is\ input\r\n
+comment3.params=first\ last
+comment3.target=java.lang.String\ reverseName(java.lang.String,\ java.lang.String)
+comment3.text=\r\n\ Given\ first\ and\ last\ name\ as\ String(text)\ inputs),\ return\ a\ String\ of\ the\ form\r\n\ last\ comma\ first\r\n
+comment4.params=
+comment4.target=void\ main()
+numComments=5
