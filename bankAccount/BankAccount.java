@@ -12,20 +12,36 @@ public class BankAccount
     private String owner;
 
     //constructors
+    public BankAccount()
+    {
+        balance = 1.0;
+        owner = "Seth Frank";        
+    }
     public BankAccount(String myOwner, double start)
     {
-        // initialise instance variables
-        //balance = 1.0;
-        //owner = "Seth Frank";
-        
         balance = start;
         owner = myOwner;
     }
+    public BankAccount(String myOwner)
+    {
+        balance = 1.0;
+        owner = myOwner;
+    }
+    public BankAccount(double start)
+    {
+        balance = start;
+        owner = "Seth Frank";
+    }
+    
     
     //methods
-    public double getBalance()
+    public double getBalance() // accessor method
     {
         return balance;
+    }
+    public String getOwner()
+    {
+        return owner;
     }
     public void deposit(double amount)
     {
@@ -40,10 +56,13 @@ public class BankAccount
         System.out.println("This is the balance: $" + balance);
         System.out.println("Account owner: " + owner);
     }
-    public void addInterest()
+    public void addInterest(double amount)
     {
-        System.out.println("The interest rate is 2%");
-        balance = balance + balance * 0.02;
+        balance = balance + balance * amount;
+    }
+    public void taxes(double taxRate)
+    {
+        balance = balance - balance * taxRate;
     }
     
 }
