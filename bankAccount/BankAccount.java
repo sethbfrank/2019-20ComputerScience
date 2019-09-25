@@ -45,11 +45,21 @@ public class BankAccount
     }
     public void deposit(double amount)
     {
-        balance = balance + amount;
+        if(amount >= 0)
+        {
+            balance = balance + amount;
+        }else{
+            System.out.println("Please input a positive number");
+        }
     }
     public void withdraw(double amount)
     {
-        balance = balance - amount;
+        if(amount >= 0)
+        {
+            balance = balance - amount;
+        }else{
+            System.out.println("Please input a positive number");
+        }
     }
     public void printInfo()
     {
