@@ -22,19 +22,19 @@ public class Employee
         firstName = "Seth";
         lastName = "Frank";
         age = 16;
-        idNum = "1";
+        idNum = "00-000-0001";
         title = "Secretary";
         salary = 200.00;
     }
     
-    public Employee(String myFirstName, String myLastName, int myAge, String myTitle, double mySalary)
+    public Employee(String myFirstName, String myLastName, int myAge, String myTitle, double mySalary, String myIDNum)
     {
         firstName = myFirstName;
         lastName = myLastName;
         age = myAge;
         title = myTitle;
         salary = mySalary;
-        idNum = "00-000-0000";
+        idNum = myIDNum;
     }
 
     //methods
@@ -63,31 +63,49 @@ public class Employee
         return salary;
     }
     
-    public void setFirstName(String newFirstName)
+    public String setFirstName(String newFirstName)
     {
         firstName = newFirstName;
+        return firstName;
     }
-    public void setLastName(String newLastName)
+    public String setLastName(String newLastName)
     {
         lastName = newLastName;
+        return lastName;
     }
-    public void setIDNum(String newIDNum)
+    public String setIDNum(String newIDNum)
     {
+        /*if(length(idNumPart1) == 2)
+        {
+            System.out.println("Yeah");
+        }*/
         idNum = newIDNum;
+        return idNum;
     }
     
-    public void increaseAge()
+    public int increaseAge()
     {
         age++;
+        return age;
     }
     public void giveRaise(double amount)
     {
-        salary = salary  + amount;
+        if(amount > 0)
+        {
+            salary = salary  + amount;
+        }else{
+            System.out.println("Please input a positive salary.");
+        }
     }
     public void changePosition(String newTitle, double newSalary)
     {
         title = newTitle;
-        salary = newSalary;
+        if(newSalary > 0)
+        {
+            salary = newSalary;
+        }else{
+            System.out.println("Please input a positive salary.");
+        }
     }
     public void fire()
     {
