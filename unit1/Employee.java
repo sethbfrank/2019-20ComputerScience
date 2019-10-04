@@ -73,13 +73,25 @@ public class Employee
         lastName = newLastName;
         return lastName;
     }
-    public String setIDNum(String newIDNum)
+   
+    
+    public String setIDNum(String idNum1, String idNum2, String idNum3)
     {
-        /*if(length(idNumPart1) == 2)
+        //int idNum1Len = idNum1.length();
+        if(idNum1.length() == 2)
         {
-            System.out.println("Yeah");
-        }*/
-        idNum = newIDNum;
+            
+        }
+        if(idNum2.length() == 3)
+        {
+            
+        }
+        if(idNum3.length() == 3)
+        {
+            
+        }
+        
+        //idNum = newIDNum;
         return idNum;
     }
     
