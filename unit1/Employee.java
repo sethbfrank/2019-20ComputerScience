@@ -5,6 +5,7 @@
  * @author (your name)
  * @version (a version number or a date)
  */
+
 public class Employee
 {
     //fields
@@ -75,23 +76,27 @@ public class Employee
     }
    
     
-    public String setIDNum(String idNum1, String idNum2, String idNum3)
+    public String setIDNum(int idNum1, int idNum2, int idNum3)
     {
-        //int idNum1Len = idNum1.length();
-        if(idNum1.length() == 2)
+        if(idNum1 >= 0 && idNum1 <= 99)
         {
-            
+            String padded1 = String.format("%02d", idNum1);
+            if(idNum2 >= 0 && idNum2 <= 999)
+            {
+                String padded2 = String.format("%03d", idNum2);
+                if(idNum3 >= 0 && idNum3 <= 9999)
+                {
+                    String padded3 = String.format("%04d", idNum3);
+                    idNum = (padded1 + "-" + padded2 + "-" + padded3);
+                }else{
+                    System.out.print("Please input the correct format (2, 3, 4)");
+                }
+            }else{
+                System.out.print("Please input the correct format (2, 3, 4)");
+            }
+        }else{
+            System.out.print("Please input the correct format (2, 3, 4)");
         }
-        if(idNum2.length() == 3)
-        {
-            
-        }
-        if(idNum3.length() == 3)
-        {
-            
-        }
-        
-        //idNum = newIDNum;
         return idNum;
     }
     
