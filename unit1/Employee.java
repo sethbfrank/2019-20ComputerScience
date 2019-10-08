@@ -135,5 +135,6 @@ public class Employee
         System.out.println("They are " + age + " years old.");
         System.out.println("Their title is " + title + " and they have a salary of $" + salary);
         System.out.println("Their ID number is " + idNum);
+        System.out.println("");
     }
 }
