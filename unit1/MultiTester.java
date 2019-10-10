@@ -38,12 +38,12 @@ public class MultiTester
         Employee e1 = new Employee();
         
         //Accessor methods
-        e1.getFirstName();
-        e1.getLastName();
-        e1.getAge();
-        e1.getIDNum();
-        e1.getTitle();
-        e1.getSalary();
+        System.out.println(e1.getFirstName());
+        System.out.println(e1.getLastName());
+        System.out.println(e1.getAge());
+        System.out.println(e1.getIDNum());
+        System.out.println(e1.getTitle());
+        System.out.println(e1.getSalary());
         e1.printPersonnelReport();
         
         //Mutators
@@ -61,5 +61,30 @@ public class MultiTester
         
         e1.fire();
         e1.printPersonnelReport();
+
+        Employee e2 = new Employee();
+
+        System.out.println(e2.getFirstName());
+        System.out.println(e2.getLastName());
+        System.out.println(e2.getAge());
+        System.out.println(e2.getIDNum());
+        System.out.println(e2.getTitle());
+        System.out.println(e2.getSalary());
+        e2.printPersonnelReport();
+
+        e2.setFirstName("Tim");
+        e2.setLastName("Barron");
+        e2.increaseAge();
+        e2.printPersonnelReport();
+        
+        e2.setIDNum(54,798,46);
+        e2.giveRaise(1000);
+        e2.printPersonnelReport();
+        
+        e2.changePosition("Computer Science Teacher", 5000);
+        e2.printPersonnelReport();        
+        
+        e2.fire();
+        e2.printPersonnelReport();
     }
 }

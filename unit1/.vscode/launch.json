@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - MultiTester",
+            "request": "launch",
+            "mainClass": "MultiTester",
+            "projectName": "unit1_17f18798"
+        }
+    ]
+}
