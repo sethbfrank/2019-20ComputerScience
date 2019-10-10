@@ -62,7 +62,7 @@ public class MultiTester
         e1.fire();
         e1.printPersonnelReport();
 
-        Employee e2 = new Employee();
+        Employee e2 = new Employee("Seth","Frank", 20, "Teacher", 100.0, "05-934-7854");
 
         System.out.println(e2.getFirstName());
         System.out.println(e2.getLastName());
