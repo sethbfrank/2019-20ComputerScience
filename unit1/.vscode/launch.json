@@ -5,6 +5,13 @@
             "name": "CodeLens (Launch) - MultiTester",
             "request": "launch",
             "mainClass": "MultiTester",
+            "projectName": "unit1_bb61db98"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - MultiTester",
+            "request": "launch",
+            "mainClass": "MultiTester",
             "projectName": "unit1_17f18798"
         }
     ]
