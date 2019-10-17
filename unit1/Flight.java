@@ -1,6 +1,7 @@
 /**
- * This is an example of a very simple airport class.
- * It could be connected to other classes, however, this was made to be very simple.
+ * This is an example of a flight class.
+ * It has information that would be found on a passengers ticket.
+ * This could be part of a bigger Airport class
  * 
  * Author: Seth Frank
  * Version: 1.0
@@ -94,9 +95,6 @@
     }
 
     //more complex methods
-    public void flightChange()
-    {
-
-    }
+    
 
  }
