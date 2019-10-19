@@ -1,5 +1,5 @@
 /*
-This is the tester for the flight class\
+This is the tester for the flight class.
 */
 
 public class FlightTester
@@ -18,15 +18,15 @@ public class FlightTester
         System.out.println(f1.getDeparture());
         System.out.println(f1.getArrival());
 
-        //Mutators
+        // Mutators
         f1.setDeparture("JFK");
         f1.setArrival("BOS");
         f1.printFlightInfo();
 
-        //More complex methods
+        // More complex methods
         f1.flightChange("LGA");
         f1.printFlightInfo();
-        
+
         f1.flightCanceled();
         f1.printFlightInfo();
 
@@ -61,7 +61,7 @@ public class FlightTester
 
 
         //Object 3
-        Flight f3 = new Flight("JetBlue", "ORD", "MIA");
+        Flight f3 = new Flight("JetBlue", "ORD", "MIA","8D");
         System.out.println(f3);
 
         //Accessor methods
@@ -74,7 +74,7 @@ public class FlightTester
 
         //Mutators
         f3.setDeparture("JFK");
-        f3.setArrival("BOS");
+        f3.setArrival("BO");
         f3.printFlightInfo();
 
         //More complex methods
@@ -83,16 +83,5 @@ public class FlightTester
         
         f3.flightChange("LGA");
         f3.printFlightInfo();       
-    }
-
-    public static void tester (String[] args)
-    {
-        Flight f1 = new Flight();
-
-        f1.printFlightInfo();
-
-        f1.flightChange("LGA");
-        f1.printFlightInfo();
-
     }
 }

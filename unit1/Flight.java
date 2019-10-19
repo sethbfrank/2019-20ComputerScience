@@ -1,6 +1,7 @@
 /*
- * This is an example of a very simple airport class.
- * It could be connected to other classes, however, this was made to be very simple.
+ * This is an example of a very simple Flight class.
+ * It could be connected to a larger Airport class.
+ * However, this is just suppose to represent one part of the Airport class.
  * 
  * Author: Seth Frank
  * Version: 1.0
@@ -40,7 +41,7 @@ public class Flight
        arrivingAirport = myArrival;
    }
 
-   public Flight(String myAirline, String myDeparture, String myArrival)
+   public Flight(String myAirline, String myDeparture, String myArrival, String mySeat)
    {
        airline = myAirline;
        
@@ -48,12 +49,10 @@ public class Flight
        flightNum = randFlightNum.nextInt(9999);
        Random randGateNum = new Random();
        gateNum = randGateNum.nextInt(99);
-       //Random randSeatNum = new Random();
-       //int seatNum = randSeatNum.nextInt(30);
-       seat = "6F";
 
        departingAirport = myDeparture;
        arrivingAirport = myArrival;        
+       seat = mySeat;
    }
 
    //accessor methods
@@ -85,41 +84,61 @@ public class Flight
    //mutator methods
    public String setDeparture(String newDeparture)
    {
-       departingAirport = newDeparture;
-       return departingAirport;
+       int len = newDeparture.length();
+       if(len == 3)
+       {
+           departingAirport = newDeparture;
+           return departingAirport;
+       }else{
+           System.out.println("Please use the correct format.");   
+           return newDeparture;
+       }
+       
    }
    public String setArrival(String newArrival)
    {
-       arrivingAirport = newArrival;
-       return arrivingAirport;
+       int len = newArrival.length();
+       if(len == 3)
+       {
+           arrivingAirport = newArrival;
+           return arrivingAirport;
+       }else{
+           System.out.println("Please use the correct format.");   
+           return newArrival;
+       }
+       
    }
 
    //more complex methods
    public void flightChange(String newArrival)
    {
-       Random randFlightNum = new Random();
-       flightNum = randFlightNum.nextInt(9999);
-       Random randGateNum = new Random();
-       gateNum = randGateNum.nextInt(99);
        
+        //flight num
+        Random randFlightNum = new Random();
+        flightNum = randFlightNum.nextInt(9999);
+        //gate num
+        Random randGateNum = new Random();
+        gateNum = randGateNum.nextInt(99);
+       
+        //seat letter
+        ArrayList<String> seatList = new ArrayList<String>();
+        seatList.add("A");
+        seatList.add("B");
+        seatList.add("C");
+        seatList.add("D");
+        seatList.add("E");
+        seatList.add("F");
+        Random randSeatLetter = new Random();
+        int seatLetterLocation = randSeatLetter.nextInt(6);
 
-       ArrayList<String> seatList = new ArrayList<String>();
-       seatList.add("A");
-       seatList.add("B");
-       seatList.add("C");
-       seatList.add("D");
-       seatList.add("E");
-       seatList.add("F");
-       Random randSeatLetter = new Random();
-       int seatLetterLocation = randSeatLetter.nextInt(6);
-       
-       System.out.println(seatList.get(seatLetterLocation));
+        //seat num
+        Random randSeatNum = new Random();
+        int seatNum = randSeatNum.nextInt(30);
 
-       Random randSeatNum = new Random();
-       int seatNum = randSeatNum.nextInt(30);
-       System.out.println(seatNum);
-       
-       arrivingAirport = newArrival;
+        //seat num and letter
+        seat = (seatNum + seatList.get(seatLetterLocation));
+
+        arrivingAirport = newArrival;
    }
    public void flightCanceled()
    {
