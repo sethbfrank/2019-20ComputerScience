@@ -24,15 +24,17 @@ public class FlightTester
         f1.printFlightInfo();
 
         //More complex methods
+        f1.flightChange("LGA");
+        f1.printFlightInfo();
+        
         f1.flightCanceled();
         f1.printFlightInfo();
 
-        f1.flightChange("LGA");
-        f1.printFlightInfo();
+        
 
 
         //Object 2
-        Flight f2 = new Flight();
+        Flight f2 = new Flight("American Airlines", 7655, 45, "25D", "DFW", "LAX");
         System.out.println(f2);
 
         //Accessor methods
@@ -49,15 +51,17 @@ public class FlightTester
         f2.printFlightInfo();
 
         //More complex methods
+        f2.flightChange("LGA");
+        f2.printFlightInfo();
+        
         f2.flightCanceled();
         f2.printFlightInfo();
         
-        f2.flightChange("LGA");
-        f2.printFlightInfo();
+        
 
 
         //Object 3
-        Flight f3 = new Flight();
+        Flight f3 = new Flight("JetBlue", "ORD", "MIA");
         System.out.println(f3);
 
         //Accessor methods
@@ -78,6 +82,17 @@ public class FlightTester
         f3.printFlightInfo();
         
         f3.flightChange("LGA");
-        f3.printFlightInfo();
+        f3.printFlightInfo();       
+    }
+
+    public static void tester (String[] args)
+    {
+        Flight f1 = new Flight();
+
+        f1.printFlightInfo();
+
+        f1.flightChange("LGA");
+        f1.printFlightInfo();
+
     }
 }

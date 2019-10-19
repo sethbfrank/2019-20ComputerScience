@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - FlightTester",
+            "request": "launch",
+            "mainClass": "FlightTester",
+            "projectName": "unit1_bb61db98"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - MultiTester",
             "request": "launch",
             "mainClass": "MultiTester",

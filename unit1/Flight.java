@@ -6,6 +6,7 @@
  * Version: 1.0
  */
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Flight
@@ -100,13 +101,31 @@ public class Flight
        flightNum = randFlightNum.nextInt(9999);
        Random randGateNum = new Random();
        gateNum = randGateNum.nextInt(99);
+       
+
+       ArrayList<String> seatList = new ArrayList<String>();
+       seatList.add("A");
+       seatList.add("B");
+       seatList.add("C");
+       seatList.add("D");
+       seatList.add("E");
+       seatList.add("F");
+       Random randSeatLetter = new Random();
+       int seatLetterLocation = randSeatLetter.nextInt(6);
+       
+       System.out.println(seatList.get(seatLetterLocation));
+
+       Random randSeatNum = new Random();
+       int seatNum = randSeatNum.nextInt(30);
+       System.out.println(seatNum);
+       
        arrivingAirport = newArrival;
    }
    public void flightCanceled()
    {
        airline = "Canceled";
-       flightNum = null;
-       gateNum = null;
+       flightNum = 0;
+       gateNum = 0;
        seat = "Canceled";
        departingAirport = "Canceled";
        arrivingAirport = "Canceled";
@@ -119,6 +138,7 @@ public class Flight
        System.out.println("You are boarding at gate "+ gateNum + ".");
        System.out.println("You are sitting in seat " + seat + ".");
        System.out.println("You are departing from " + departingAirport + " and arriving in " + arrivingAirport + ".");
+       System.out.println("");
    }
 
 }
