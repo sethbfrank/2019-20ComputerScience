@@ -65,6 +65,7 @@ public class BankAccount
     {
         System.out.println("This is the balance: $" + balance);
         System.out.println("Account owner: " + owner);
+        System.out.println("");
     }
     public void addInterest(double amount)
     {
