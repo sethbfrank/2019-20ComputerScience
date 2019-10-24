@@ -2,8 +2,8 @@
 comment0.target=Bank
 comment1.params=
 comment1.target=Bank()
-comment10.params=
-comment10.target=void\ replaceBigShots()
+comment10.params=nextPres\ nextVP
+comment10.target=void\ replaceBigShots(Employee,\ Employee)
 comment11.params=raise
 comment11.target=void\ giveTellersRaise(double)
 comment12.params=

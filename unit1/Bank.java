@@ -103,10 +103,10 @@ public class Bank
         vicePresident.fire();
     }
     
-    public void replaceBigShots()
+    public void replaceBigShots(Employee nextPres, Employee nextVP)
     {
-        president = teller1;
-        vicePresident = teller2;
+        nextPres = president;
+        nextVP = vicePresident;
     }
     
     public void giveTellersRaise(double raise)
