@@ -17,19 +17,20 @@ public class BankAccount
         balance = 1.0;
         owner = "Seth Frank";        
     }
-    public BankAccount(String myOwner, double start)
+    public BankAccount(String owner, double balance)
     {
-        balance = start;
-        owner = myOwner;
+        //this is referring to the field of the object
+        this.balance = balance;
+        this.owner = owner;
     }
-    public BankAccount(String myOwner)
+    public BankAccount(String owner)
     {
         balance = 1.0;
-        owner = myOwner;
+        this.owner = owner;
     }
-    public BankAccount(double start)
+    public BankAccount(double balance)
     {
-        balance = start;
+        this.balance = balance;
         owner = "Seth Frank";
     }
     
@@ -74,6 +75,13 @@ public class BankAccount
     public void taxes(double taxRate)
     {
         balance = balance - balance * taxRate;
+    }
+    public void transferTo(BankAccount other, double amount)
+    {
+        this.withdraw(amount);
+        other.deposit(amount);
+        this.printInfo();
+        other.printInfo();
     }
     
 }

@@ -105,8 +105,8 @@ public class Bank
     
     public void replaceBigShots(Employee nextPres, Employee nextVP)
     {
-        nextPres = president;
-        nextVP = vicePresident;
+        president = nextPres;
+        vicePresident = nextVP;
     }
     
     public void giveTellersRaise(double raise)
