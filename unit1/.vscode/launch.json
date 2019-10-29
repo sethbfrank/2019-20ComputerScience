@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - TestMiniConvoy",
+            "request": "launch",
+            "mainClass": "TestMiniConvoy",
+            "projectName": "unit1_17f18798"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - FlightTester",
             "request": "launch",
             "mainClass": "FlightTester",

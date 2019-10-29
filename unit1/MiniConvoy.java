@@ -43,15 +43,30 @@ public class MiniConvoy
     public void swapOrder()
     {
         Car temp;
+        temp = lead;
+        lead = middle;
+        middle = end;
+        end = temp;
         
     }
-    public void replaceCar()
+    public void replaceCar(Car newCar, int position)
     {
-
+        if(position == 1)
+        {
+            newCar = lead;
+        }
+        else if(position == 2)
+        {
+            newCar = middle;
+        }
+        else if(position == 3)
+        {
+            newCar = end;
+        }       
     }
     public void printConvoyInfo()
     {
-
+        //done
     }
 
 
