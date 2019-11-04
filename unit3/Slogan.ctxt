@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Slogan
+comment1.params=str
+comment1.target=Slogan(java.lang.String)
+comment2.params=
+comment2.target=java.lang.String\ getSlogan()
+comment3.params=
+comment3.target=int\ getCount()
+numComments=4
