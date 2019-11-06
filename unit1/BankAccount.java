@@ -5,33 +5,44 @@
  * @author (Seth Frank)
  * @version (1.0)
  */
+
 public class BankAccount
 {
     //fields
     private double balance;
     private String owner;
+    private int currentID;
+    private static int id = 0;
 
     //constructors
     public BankAccount()
     {
         balance = 1.0;
-        owner = "Seth Frank";        
+        owner = "Seth Frank";
+        currentID = id;
+        id++;
     }
     public BankAccount(String owner, double balance)
     {
         //this is referring to the field of the object
         this.balance = balance;
         this.owner = owner;
+        currentID = id;
+        id++;
     }
     public BankAccount(String owner)
     {
         balance = 1.0;
         this.owner = owner;
+        currentID = id;
+        id++;
     }
     public BankAccount(double balance)
     {
         this.balance = balance;
         owner = "Seth Frank";
+        currentID = id;
+        id++;
     }
     
     
@@ -43,6 +54,10 @@ public class BankAccount
     public String getOwner()
     {
         return owner;
+    }
+    public int getID()
+    {
+        return currentID;
     }
     public void deposit(double amount)
     {
@@ -66,6 +81,7 @@ public class BankAccount
     {
         System.out.println("This is the balance: $" + balance);
         System.out.println("Account owner: " + owner);
+        System.out.println("Account ID: " + currentID); 
         System.out.println("");
     }
     public void addInterest(double amount)

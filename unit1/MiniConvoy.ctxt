@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=MiniConvoy
+comment1.params=
+comment1.target=MiniConvoy()
+comment2.params=currentDestination\ lead\ middle\ end
+comment2.target=MiniConvoy(java.lang.String,\ Car,\ Car,\ Car)
+comment3.params=
+comment3.target=java.lang.String\ getDestination()
+comment4.params=currentDestination
+comment4.target=java.lang.String\ setDestination(java.lang.String)
+comment5.params=mileage
+comment5.target=void\ travel(double)
+comment6.params=
+comment6.target=void\ swapOrder()
+comment7.params=newCar\ position
+comment7.target=void\ replaceCar(Car,\ int)
+comment8.params=
+comment8.target=void\ printConvoyInfo()
+numComments=9

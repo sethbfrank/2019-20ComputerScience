@@ -3,9 +3,9 @@ public class TestMiniConvoy
     public static void main(String[] args)
     {
         MiniConvoy mc1 = new MiniConvoy();
-        Car mc2lead = ("Hyundai", "Tucson", "Gray", 10000);
-        Car mc2middle = ("Honda", "Pilot", "Marroon", 120000);
-        Car mc2end = ("Porshe", "911", "Black", 1000);
+        Car mc2lead = new Car("Hyundai", "Tucson", "Gray", 10000);
+        Car mc2middle = new Car("Honda", "Pilot", "Marroon", 120000);
+        Car mc2end = new Car("Porshe", "911", "Black", 1000);
         MiniConvoy mc2 = new MiniConvoy("Farmington", mc2lead, mc2middle, mc2end);
 
         mc1.printConvoyInfo();

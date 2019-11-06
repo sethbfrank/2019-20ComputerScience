@@ -11,9 +11,9 @@ public class MiniConvoy
     public MiniConvoy()
     {
         currentDestination = "Chicago";
-        lead = ("Dodge", "Monaco", "White", 300000.0);
-        middle = ("Subaru", "Outback", "Blue", 3000.0);
-        end = ("Ford", "Mustang", "Black", 0.0);
+        lead = new Car("Dodge", "Monaco", "White", 300000.0);
+        middle = new Car("Subaru", "Outback", "Blue", 3000.0);
+        end = new Car("Ford", "Mustang", "Black", 0.0);
     }
     public MiniConvoy(String currentDestination, Car lead, Car middle, Car end)
     {
