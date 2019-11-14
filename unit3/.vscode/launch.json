@@ -2,6 +2,12 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - MoneyOptimizer",
+            "request": "launch",
+            "mainClass": "MoneyOptimizer"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - RecreatingMath",
             "request": "launch",
             "mainClass": "RecreatingMath"
