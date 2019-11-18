@@ -1,4 +1,4 @@
-import jdk.javadoc.internal.doclets.toolkit.resources.doclets;
+
 
 public class Customer
 {
@@ -8,7 +8,7 @@ public class Customer
 
     public Customer(String name)
     {
-        name = n;
+        String n = name;
         currAccNum = nextAccNum;
         nextAccNum++;
     }

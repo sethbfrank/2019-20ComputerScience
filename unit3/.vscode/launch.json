@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Test",
+            "request": "launch",
+            "mainClass": "Test",
+            "projectName": "unit3_17f1879a"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - MoneyOptimizer",
             "request": "launch",
             "mainClass": "MoneyOptimizer"

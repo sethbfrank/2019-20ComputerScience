@@ -41,7 +41,7 @@ public class MoneyOptimizer
         int centInt = (int) cents;
         //System.out.println(centInt);
 
-        System.out.println("Quaters: " + centInt/25);
+        System.out.println("Quarters: " + centInt/25);
         centInt = centInt%25;
 
         System.out.println("Dimes: " + centInt/10);
