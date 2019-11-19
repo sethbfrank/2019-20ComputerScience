@@ -1,5 +1,7 @@
 public class CashRegister
 {
+
+    //fields
     private int pennies;
     private int nickels;
     private int dimes;
@@ -8,14 +10,32 @@ public class CashRegister
     private int fives;
     private int tens;
     private int twenties;
-    private int idNum;
-    private static int nextID;
+    private int currentID;
+    private static int id = 0;
 
+
+    //constructors
     public CashRegister()
     {
-
+        this.replenish();
+        currentID = id;
+        id++;
     }
 
+
+    //methods
+    public void replenish()
+    {
+        twenties = 5;
+        tens = 12;
+        fives = 15;
+        ones = 45;
+        quarters = 24;
+        dimes = 20;
+        nickels = 20;
+        pennies = 100;
+    }
+    
     public double calculateTotalMoney()
     {
         double totalMoney;
