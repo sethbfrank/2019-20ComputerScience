@@ -21,12 +21,47 @@ public class CashRegister
         currentID = id;
         id++;
     }
+    public CashRegister(int pennies, int nickels, int dimes, int quarters, int ones, int fives, int tens, int twenties)
+    {
+        this.pennies = pennies;
+        this.nickels = nickels;
+        this.dimes = dimes;
+        this.quarters = quarters;
+        this.ones = ones;
+        this.fives = fives;
+        this.tens = tens;
+        this.twenties = twenties;
+        currentID = id;
+        id++;
+    }
+    public CashRegister(int pennies)
+    {
+        this.pennies = pennies;
+        nickels = CashRegister.randomInt(5, 20);
+        dimes = CashRegister.randomInt(5, 20);
+        quarters = CashRegister.randomInt(10, 24);
+        ones = CashRegister.randomInt(10, 45);
+        fives = CashRegister.randomInt(1,15);
+        tens = CashRegister.randomInt(1, 12);
+        twenties = CashRegister.randomInt(1, 5);
+        currentID = id;
+        id++;
+    }
+
 
 
     //methods
+    //private method to determine a random int based on a range
+    private static int randomInt(int min, int max)
+    {
+        int randomNum = (int)(Math.random()*(max - min + 1)) + min;
+        return randomNum;
+    }
+    
+    //prints our infomration from the cash register
     public void printRegisterStatus()
     {
-        System.out.println(currentID);
+        System.out.println("ID Number: " + currentID);
         System.out.println("Twenties: " + twenties);
         System.out.println("Tens: " + tens);
         System.out.println("Fives: " + fives);
@@ -35,8 +70,10 @@ public class CashRegister
         System.out.println("Dimes: " + dimes);
         System.out.println("Nickels: " + nickels);
         System.out.println("Pennies: " + pennies);
+        System.out.println("******************");
     }
     
+    //replenishes a cash register with default information
     public void replenish()
     {
         twenties = 5;
@@ -49,6 +86,7 @@ public class CashRegister
         pennies = 100;
     }
     
+    //calculates the total amount of money in the cash register and returns it as a double
     public double calculateTotalMoney()
     {
         double totalMoney;
@@ -61,5 +99,23 @@ public class CashRegister
         totalMoney += nickels*.05;
         totalMoney += pennies*.01;
         return totalMoney;
+    }
+
+    //adds a specific amoutn of coins or bills to a cash register based on user inputs
+    public void addMoney(int pennies, int nickels, int dimes, int quarters, int ones, int fives, int tens, int twenties)
+    {
+        this.pennies+=pennies;
+        this.nickels+=nickels;
+        this.dimes+=dimes;
+        this.quarters+=quarters;
+        this.ones+=ones;
+        this.fives+=fives;
+        this.tens+=tens;
+        this.twenties+=twenties;
+    }
+
+    public void removeOptimumMoneyPossible(double amount)
+    {
+
     }
 }
