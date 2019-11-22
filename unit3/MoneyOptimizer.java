@@ -14,6 +14,24 @@ public class MoneyOptimizer
         System.out.println(value);
         int dollars = (int) value;
         //System.out.println(dollars);
+
+        /*if((dollars/20) > CashRegister.getTwenties())
+        {
+            //if there are less twenties in the cash register
+            System.out.println("Twenties: " + CashRegister.getTwenties());
+            dollars-=(CashRegister.getTwenties()*20);
+        }else{
+            //if there are an abudance of twenties in the cash register
+            System.out.println("Twenties: " + dollars/20);
+            dollars = dollars%20;
+        }
+        System.out.print("Remaining: " + dollars);*/
+        
+
+
+
+
+
         
         System.out.println("Twenties: " + dollars/20);
         dollars = dollars%20;

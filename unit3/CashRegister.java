@@ -51,6 +51,13 @@ public class CashRegister
 
 
     //methods
+
+    /*public static int getTwenties()
+    {
+        return twenties;
+    }*/
+
+
     //private method to determine a random int based on a range
     private static int randomInt(int min, int max)
     {
@@ -61,6 +68,7 @@ public class CashRegister
     //prints our infomration from the cash register
     public void printRegisterStatus()
     {
+        System.out.println("");
         System.out.println("ID Number: " + currentID);
         System.out.println("Twenties: " + twenties);
         System.out.println("Tens: " + tens);
@@ -114,8 +122,50 @@ public class CashRegister
         this.twenties+=twenties;
     }
 
+    public void moneyOptimizer(double value, int type)
+    {
+        int dollars = (int) value;
+        System.out.println(dollars);
+        
+        if((dollars/20) > twenties)
+        {
+            //if there are less twenties in the cash register
+            System.out.println("Twenties: " + twenties);
+            dollars-=(twenties*20);
+        }else{
+            //if there are an abudance of twenties in the cash register
+            System.out.println("Twenties: " + dollars/20);
+            dollars = dollars%20;
+        }
+        System.out.print("Remaining: " + dollars);
+        
+        if((dollars/10) > tens)
+        {
+            System.out.println("Tens: " + tens);
+            dollars-=(tens*10);
+        }else{
+            System.out.println("Tens: " + dollars/10);
+        }
+    }
+
     public void removeOptimumMoneyPossible(double amount)
     {
-
+        if(amount > this.calculateTotalMoney())
+        {
+            System.out.println("Not enough in Cash Register");
+        }else{
+            int dollars = (int) amount;
+            System.out.println(dollars);
+            
+            if((dollars/20) > twenties)
+            {
+                System.out.println("Twenties: " + twenties);
+                dollars-=(twenties*20);
+            }else{
+                System.out.println("Twenties: " + dollars/20);
+                dollars = dollars%20;
+            }
+            System.out.print(dollars);
+        }
     }
 }
