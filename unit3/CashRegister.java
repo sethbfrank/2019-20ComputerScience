@@ -52,7 +52,7 @@ public class CashRegister
 
     //methods
 
-    /*public static int getTwenties()
+    /*public int getTwenties()
     {
         return twenties;
     }*/
@@ -68,8 +68,9 @@ public class CashRegister
     //prints our infomration from the cash register
     public void printRegisterStatus()
     {
-        System.out.println("");
+        System.out.println("");        
         System.out.println("ID Number: " + currentID);
+        System.out.println("Total Money : $" + this.calculateTotalMoney());
         System.out.println("Twenties: " + twenties);
         System.out.println("Tens: " + tens);
         System.out.println("Fives: " + fives);
@@ -122,7 +123,7 @@ public class CashRegister
         this.twenties+=twenties;
     }
 
-    public void moneyOptimizer(double value, int type)
+    public void moneyOptimizer(double value, int intType, String stringType)
     {
         int dollars = (int) value;
         System.out.println(dollars);
@@ -137,7 +138,7 @@ public class CashRegister
             System.out.println("Twenties: " + dollars/20);
             dollars = dollars%20;
         }
-        System.out.print("Remaining: " + dollars);
+        System.out.println("Remaining: " + dollars);
         
         if((dollars/10) > tens)
         {
@@ -146,6 +147,48 @@ public class CashRegister
         }else{
             System.out.println("Tens: " + dollars/10);
         }
+        System.out.println("Remaining: " + dollars);
+
+        if((dollars/5) > fives)
+        {
+            System.out.println("Fives: " + fives);
+            dollars-=(tens*5);
+        }else{
+            System.out.println("Fives: " + dollars/5);
+        }
+        System.out.println("Remaining: " + dollars);
+
+        if((dollars/1) > ones)
+        {
+            System.out.println("Ones: " + ones);
+            dollars-=(tens*1);
+        }else{
+            System.out.println("Ones: " + dollars/1);
+        }
+        System.out.println("Remaining: " + dollars);
+
+        //changes cents to an integer number
+        double cents;
+        if(value < 1)
+        {
+            cents = value;
+            cents = cents*100;
+        }else{
+            cents = value%(int)value;
+            cents += .001;
+            cents = cents*100;
+        }
+        
+        int centInt = (int) cents;
+
+        if((centInt/25) > quarters)
+        {
+            System.out.println("Quarters: " + quarters);
+            centInt-=(quarters*25);
+        }else{
+            System.out.println("Quarters: " + centInt/25);
+        }
+        System.out.println("Remaining: " + centInt);
     }
 
     public void removeOptimumMoneyPossible(double amount)
@@ -159,13 +202,99 @@ public class CashRegister
             
             if((dollars/20) > twenties)
             {
+                //if there are less twenties in the cash register
                 System.out.println("Twenties: " + twenties);
                 dollars-=(twenties*20);
             }else{
+                //if there are an abudance of twenties in the cash register
                 System.out.println("Twenties: " + dollars/20);
                 dollars = dollars%20;
             }
-            System.out.print(dollars);
+            System.out.println("Remaining: " + dollars);
+            
+            if((dollars/10) > tens)
+            {
+                System.out.println("Tens: " + tens);
+                dollars-=(tens*10);
+            }else{
+                System.out.println("Tens: " + dollars/10);
+                dollars = dollars%10;
+            }
+            System.out.println("Remaining: " + dollars);
+
+            if((dollars/5) > fives)
+            {
+                System.out.println("Fives: " + fives);
+                dollars-=(fives*5);
+            }else{
+                System.out.println("Fives: " + dollars/5);
+                dollars = dollars%5;
+            }
+            System.out.println("Remaining: " + dollars);
+
+            if((dollars/1) > ones)
+            {
+                System.out.println("Ones: " + ones);
+                dollars-=(ones*1);
+            }else{
+                System.out.println("Ones: " + dollars/1);
+                dollars = dollars%1;
+            }
+            System.out.println("Remaining: " + dollars);
+
+            //changes cents to an integer number
+            double cents;
+            if(amount < 1)
+            {
+                cents = amount;
+                cents = cents*100;
+            }else{
+                cents = amount%(int)amount;
+                cents += .001;
+                cents = cents*100;
+            }
+            
+            int centInt = (int) cents;
+
+            if((centInt/25) > quarters)
+            {
+                System.out.println("Quarters: " + quarters);
+                centInt-=(quarters*25);
+            }else{
+                System.out.println("Quarters: " + centInt/25);
+                centInt = centInt%25;
+            }
+            System.out.println("Remaining: " + centInt);
+
+            if((centInt/10) > dimes)
+            {
+                System.out.println("Dimes: " + dimes);
+                centInt-=(dimes*10);
+            }else{
+                System.out.println("Quarters: " + centInt/10);
+                centInt = centInt%10;
+            }
+            System.out.println("Remaining: " + centInt);
+
+            if((centInt/5) > nickels)
+            {
+                System.out.println("Nickels: " + nickels);
+                centInt-=(nickels*5);
+            }else{
+                System.out.println("Nickels: " + centInt/6);
+                centInt = centInt%5;
+            }
+            System.out.println("Remaining: " + centInt);
+
+            if((centInt/1) > pennies)
+            {
+                System.out.println("Pennies: " + pennies);
+                centInt-=(quarters*25);
+            }else{
+                System.out.println("Pennies: " + centInt/1);
+                centInt = centInt%1;
+            }
+            System.out.println("Remaining: " + centInt);
         }
     }
 }

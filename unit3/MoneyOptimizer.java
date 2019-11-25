@@ -15,11 +15,11 @@ public class MoneyOptimizer
         int dollars = (int) value;
         //System.out.println(dollars);
 
-        /*if((dollars/20) > CashRegister.getTwenties())
+        /*if((dollars/20) > this.getTwenties())
         {
             //if there are less twenties in the cash register
-            System.out.println("Twenties: " + CashRegister.getTwenties());
-            dollars-=(CashRegister.getTwenties()*20);
+            System.out.println("Twenties: " + this.getTwenties());
+            dollars-=(this.getTwenties()*20);
         }else{
             //if there are an abudance of twenties in the cash register
             System.out.println("Twenties: " + dollars/20);
