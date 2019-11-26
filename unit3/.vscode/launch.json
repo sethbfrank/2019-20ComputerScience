@@ -4,6 +4,12 @@
             "type": "java",
             "name": "CodeLens (Launch) - CashRegisterTester",
             "request": "launch",
+            "mainClass": "CashRegisterTester"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - CashRegisterTester",
+            "request": "launch",
             "mainClass": "CashRegisterTester",
             "projectName": "unit3_17f1879a"
         },
