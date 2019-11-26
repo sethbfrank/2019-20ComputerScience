@@ -1,5 +1,3 @@
-import sun.jvm.hotspot.debugger.cdbg.IntType;
-
 public class CashRegister
 {
 
@@ -15,8 +13,8 @@ public class CashRegister
     private int currentID;
     private static int id = 0;
 
+    //static field used to keep track of the amount of money in removeOptimumMoneyPossible
     private static int moneyInt;
-    //private static int tempField;
 
 
     //constructors
@@ -56,12 +54,6 @@ public class CashRegister
 
 
     //methods
-
-    /*public int getTwenties()
-    {
-        return twenties;
-    }*/
-
 
     //private method to determine a random int based on a range
     private static int randomInt(int min, int max)
@@ -115,7 +107,7 @@ public class CashRegister
         return totalMoney;
     }
 
-    //adds a specific amoutn of coins or bills to a cash register based on user inputs
+    //adds a specific amount of coins or bills to a cash register based on user inputs
     public void addMoney(int pennies, int nickels, int dimes, int quarters, int ones, int fives, int tens, int twenties)
     {
         this.pennies+=pennies;
@@ -128,6 +120,7 @@ public class CashRegister
         this.twenties+=twenties;
     }
 
+    //removes a certain amount of money based on the amount inputed
     public void removeOptimumMoneyPossible(double amount)
     {
         if(amount > this.calculateTotalMoney())
@@ -161,11 +154,11 @@ public class CashRegister
         }
     }
 
+    //checks to see what field type is being used (twenties, tens, etc.)
     public void moneyOptimizer(double amount, String type)
     {
         int intType;
         int tempField;
-        //checks to see what field type is being used (twenties, tens, etc.)
         if(type == "Twenties")
         {
             intType = 20;
@@ -215,10 +208,9 @@ public class CashRegister
             pennies = this.reusable(type, intType, tempField);
         }
     }
-
+    //a reusable method that can be used with any money field type (twenties, quarters, etc.)  
     public int reusable(String type, int intType, int tempField)
-    {
-        //a reusable method that can be used with any money field type (twenties, quarters, etc.)   
+    { 
         if((moneyInt/intType) > tempField)
         {
             //if there are less twenties in the cash register
@@ -238,17 +230,16 @@ public class CashRegister
 
 
 
-
-
-    public void removeMoney(double amount)
+    //another method removeOptimumMoneyPossible that is not as resuable
+    //not used in the program, but I keep it for my own reference
+    public void removeOptimumMoneyPossible2(double amount)
     {
         if(amount > this.calculateTotalMoney())
         {
             System.out.println("Not enough in Cash Register");
         }else{
             int dollars = (int) amount;
-            //System.out.println(dollars);
-            
+
             if((dollars/20) > twenties)
             {
                 //if there are less twenties in the cash register
@@ -261,7 +252,6 @@ public class CashRegister
                 twenties-=(dollars/20);
                 dollars = dollars%20;
             }
-            //System.out.println("Remaining: " + dollars);
             
             if((dollars/10) > tens)
             {
@@ -273,7 +263,6 @@ public class CashRegister
                 tens-=dollars/10;
                 dollars = dollars%10;
             }
-            //System.out.println("Remaining: " + dollars);
 
             if((dollars/5) > fives)
             {
@@ -285,7 +274,6 @@ public class CashRegister
                 fives-=dollars/5;
                 dollars = dollars%5;
             }
-            //System.out.println("Remaining: " + dollars);
 
             if((dollars/1) > ones)
             {
@@ -297,7 +285,6 @@ public class CashRegister
                 ones-=dollars/1;
                 dollars = dollars%1;
             }
-            //System.out.println("Remaining: " + dollars);
 
             //changes cents to an integer number
             double cents;
@@ -323,7 +310,6 @@ public class CashRegister
                 quarters-=centInt/25;
                 centInt = centInt%25;
             }
-            //System.out.println("Remaining: " + centInt);
 
             if((centInt/10) > dimes)
             {
@@ -335,7 +321,6 @@ public class CashRegister
                 dimes-=centInt/10;
                 centInt = centInt%10;
             }
-            //System.out.println("Remaining: " + centInt);
 
             if((centInt/5) > nickels)
             {
@@ -347,7 +332,6 @@ public class CashRegister
                 nickels-=centInt/5;
                 centInt = centInt%5;                
             }
-            //System.out.println("Remaining: " + centInt);
 
             if((centInt/1) > pennies)
             {
@@ -359,7 +343,6 @@ public class CashRegister
                 pennies-=centInt/1;
                 centInt = centInt%1;                
             }
-            //System.out.println("Remaining: " + centInt);
         }
     }
 }
