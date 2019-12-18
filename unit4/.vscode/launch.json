@@ -2,6 +2,12 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - StringReview",
+            "request": "launch",
+            "mainClass": "StringReview"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - PigLatin",
             "request": "launch",
             "mainClass": "PigLatin"
