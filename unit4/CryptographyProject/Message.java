@@ -1,19 +1,25 @@
 public class Message
 {
     //fields
-    //private String message;
-    private String plaintext;
-    private String ciphertext;
+    private String message;
     private boolean isEncrypted;
 
     //constructors
-    public Message(String plaintext)
+    public Message(String message, boolean isEncrypted)
     {
-        this.plaintext = plaintext;
+        this.message = message;
+        this.isEncrypted = isEncrypted;
     }
 
 
     //methods
-
+    public String getMessage()
+    {
+        return message;
+    }
+    public boolean getIsEncrypted()
+    {
+        return isEncrypted;
+    }
 
 }
