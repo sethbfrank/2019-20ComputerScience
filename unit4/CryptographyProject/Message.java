@@ -5,6 +5,12 @@ public class Message
     private boolean isEncrypted;
 
     //constructors
+    public Message()
+    {
+        message = "default";
+        isEncrypted = false;
+    }
+    
     public Message(String message, boolean isEncrypted)
     {
         this.message = message;
