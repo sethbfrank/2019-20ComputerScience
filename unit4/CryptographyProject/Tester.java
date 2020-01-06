@@ -4,10 +4,8 @@ public class Tester
     {
         Message m1 = new Message("hello", false);
         
-        //Cipher.createCipherAlaphabet(25);
-
         Cipher c1 = new Cipher(25);
-        c1.encrypt(m1);
+        System.out.println(c1.encrypt(m1));
         //c1.printCipherInfo();
 
         //m1.printMessage();

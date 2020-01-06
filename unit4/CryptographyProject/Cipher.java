@@ -3,25 +3,15 @@
 public class Cipher
 {
     //fields
-    //private static int shifter;
     private String cipherAlphabet;
-    private String plainAlphabet; //= "abcdefghijklmnopqrstuvwxyz";
-    //private ArrayList newMessage;
+    private String plainAlphabet;
     private String newMessageString = "";
-    //private boolean isEncrypted;
-    //private Message theMessage;
-    //private ArrayList list = new ArrayList<>();
-
+    
     //constructors
-    /*public Cipher()
-    {
-        theMessage = new Message("hello", false);
-    }*/
     public Cipher(int shifter)
     {
         plainAlphabet = "abcdefghijklmnopqrstuvwxyz";
         cipherAlphabet = Cipher.createCipherAlaphabet(plainAlphabet, shifter);
-        //this.theMessage = theMessage;
     }
 
     //methods
@@ -83,13 +73,6 @@ public class Cipher
         }
         return theMessage;
     }
-
-    /*public void printCipherInfo()
-    {
-        this.theMessage.printMessage();
-        //System.out.println(this.theMessage.getIsEncrypted());
-    }*/
-
 
 
     /*public void oldEncrypt()
