@@ -1,71 +1,113 @@
-import java.util.ArrayList;
+//import java.util.ArrayList;
 
 public class Cipher
 {
     //fields
-    private static int shifter = 25;
-    private static String cipherAlaphabet;
-    private static String plainAlaphabet = "abcdefghijklmnopqrstuvwxyz";
+    //private static int shifter;
+    private String cipherAlphabet;
+    private String plainAlphabet; //= "abcdefghijklmnopqrstuvwxyz";
     //private ArrayList newMessage;
-    private boolean isEncrypted;
-    private Message message1;
+    private String newMessageString = "";
+    //private boolean isEncrypted;
+    //private Message theMessage;
     //private ArrayList list = new ArrayList<>();
 
     //constructors
-    public Cipher()
+    /*public Cipher()
     {
-        message1 = new Message("gdkkn", true);
-    }
-    public Cipher(String message, boolean isEncrypted)
+        theMessage = new Message("hello", false);
+    }*/
+    public Cipher(int shifter)
     {
-        message1 = new Message(message, isEncrypted);
+        plainAlphabet = "abcdefghijklmnopqrstuvwxyz";
+        cipherAlphabet = Cipher.createCipherAlaphabet(plainAlphabet, shifter);
+        //this.theMessage = theMessage;
     }
 
     //methods
-    public static String createCipherAlaphabet()
+    private static String createCipherAlaphabet(String plainAlphabet, int shifter)
     {
-        String s1 = plainAlaphabet.substring(shifter, plainAlaphabet.length());
-        String s2 = plainAlaphabet.substring(0, shifter);
-        cipherAlaphabet = s1.concat(s2);
-        System.out.println(cipherAlaphabet);
-        return cipherAlaphabet;
+        String s1 = plainAlphabet.substring(shifter, plainAlphabet.length());
+        String s2 = plainAlphabet.substring(0, shifter);
+        String s3 = s1.concat(s2);
+        System.out.println(s3);
+        return s3;
     }
 
-    public void decrypt()
+    public Message decrypt(Message theMessage)
+    {
+        if(theMessage.getIsEncrypted() == false)
+        {
+            System.out.print("Error, can't decrypt a decrypted message");
+        }else{
+            //loops through this for the length of the message
+            for(int i=0; i < theMessage.getMessage().length(); i++)
+            {
+                //finds the first letter in the message
+                String s1 = theMessage.getMessage().substring(i, i+1);
+                //find the index in the cipherAlphabet
+                int num = cipherAlphabet.indexOf(s1);
+                //creates a string with the letter in the plain alphabet
+                String s2 = plainAlphabet.substring(num, num+1);
+                //adds the letter to the new message
+                newMessageString = newMessageString+s2;
+            }
+            theMessage = new Message(newMessageString, false);
+            theMessage.printMessage();            
+        }
+        return theMessage;
+    }
+
+    public Message encrypt(Message theMessage)
+    {
+        if(theMessage.getIsEncrypted() == true)
+        {
+            System.out.println("Error, can't encrypt an encrypted message");
+        }else{
+            //loops through this for the length of the message
+            for(int i=0; i < theMessage.getMessage().length(); i++)
+            {
+                //finds the first letter in the message
+                String s1 = theMessage.getMessage().substring(i, i+1);
+                //find the index in the cipherAlphabet
+                int num = plainAlphabet.indexOf(s1);
+                //creates a string with the letter in the plain alphabet
+                String s2 = cipherAlphabet.substring(num, num+1);
+                //adds the letter to the new message
+                newMessageString = newMessageString+s2;
+            }
+            theMessage = new Message(newMessageString, true);
+            //this.theMessage = theMessage;
+            theMessage.printMessage();
+            //this.theMessage = theMessage;
+        }
+        return theMessage;
+    }
+
+    /*public void printCipherInfo()
+    {
+        this.theMessage.printMessage();
+        //System.out.println(this.theMessage.getIsEncrypted());
+    }*/
+
+
+
+    /*public void oldEncrypt()
     {
         ArrayList newMessage = new ArrayList<String>();
-        for(int i=0; i < message1.getMessage().length(); i++)
+        for(int i=0; i < theMessage.getMessage().length(); i++)
         {
-            String s1 = message1.getMessage().substring(i, i+1);
-            //System.out.println(s1);
-            int num = cipherAlaphabet.indexOf(s1);
-            //System.out.println(num);
-            String s2 = plainAlaphabet.substring(num, num+1);
-            //System.out.println(s2);
+            String s1 = theMessage.getMessage().substring(i, i+1);
+            int num = plainAlphabet.indexOf(s1);
+            String s2 = cipherAlphabet.substring(num, num+1);
             newMessage.add(s2);
-            //System.out.println(newMessage);
         }
-        System.out.println();
+        System.out.println(newMessage);
         for(int i=0; i<newMessage.size(); i++)
         {
             System.out.print(newMessage.get(i));
+            //String returnMessage = returnMessage + newMessage.get(i);
         }        
-    }
-
-    public void encrypt()
-    {
-        ArrayList newMessage = new ArrayList<String>();
-        for(int i=0; i < message1.getMessage().length(); i++)
-        {
-            String s1 = message1.getMessage().substring(i, i+1);
-            int num = plainAlaphabet.indexOf(s1);
-            String s2 = cipherAlaphabet.substring(num, num+1);
-            newMessage.add(s2);
-        }
-        System.out.println();
-        for(int i=0; i<newMessage.size(); i++)
-        {
-            System.out.print(newMessage.get(i));
-        }        
-    }
+        //System.out.println(returnMessage);
+    }*/
 }

@@ -2,20 +2,27 @@ public class Tester
 {
     public static void main(String args[])
     {
-        /*Cipher.createCipherAlaphabet();
-        
-        Cipher c1 = new Cipher();
-        c1.decrypt();
-
-        Cipher c2 = new Cipher("hello", false);
-        c2.encrypt();*/
-
         Message m1 = new Message("hello", false);
-        System.out.println(m1.getMessage());
-        System.out.println(m1.getIsEncrypted());
+        
+        //Cipher.createCipherAlaphabet(25);
 
-        Message m2 = new Message();
-        System.out.println(m2.getMessage());
-        System.out.println(m2.getIsEncrypted());        
+        Cipher c1 = new Cipher(25);
+        c1.encrypt(m1);
+        //c1.printCipherInfo();
+
+        //m1.printMessage();
+
+        //c1.decrypt(m1);
+        //c1.printCipherInfo();
+
+        
+        /*Message m2 = new Message("gdkkn", false);
+        
+        Cipher.createCipherAlaphabet(25);
+
+        Cipher c2 = new Cipher(m2);
+        c2.decrypt(m2);
+        c2.printCipherInfo();*/
+
     }
 }

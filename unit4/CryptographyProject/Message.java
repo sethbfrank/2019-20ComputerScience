@@ -27,5 +27,15 @@ public class Message
     {
         return isEncrypted;
     }
+    public void changeMessage(Message newMessage)
+    {
+        this.message = newMessage.getMessage();
+        this.isEncrypted = newMessage.getIsEncrypted();
+    }
+    public void printMessage()
+    {
+        System.out.println("Message: " + message);
+        System.out.println("Encrypted: " + isEncrypted);
+    }
 
 }
