@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - RandomClass",
+            "request": "launch",
+            "mainClass": "RandomClass",
+            "projectName": "unit4_8dc7eb32"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Tester",
             "request": "launch",
             "mainClass": "Tester"
