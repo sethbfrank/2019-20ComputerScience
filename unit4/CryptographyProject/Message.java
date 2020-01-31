@@ -1,3 +1,5 @@
+package CryptographyProject;
+
 public class Message
 {
     //fields
