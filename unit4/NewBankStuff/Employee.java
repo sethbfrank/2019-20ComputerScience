@@ -24,8 +24,7 @@ public class Employee
         salary = 120000;
     }
 
-    public Employee(final String first, final String last, final int myAge, final String occupation,
-            final double start) {
+    public Employee(final String first, final String last, final int myAge, final String occupation, final double start) {
         firstName = first;
         lastName = last;
         age = myAge;

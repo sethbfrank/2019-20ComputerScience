@@ -4,8 +4,8 @@ public class Bank
 {
     //fields
     private boolean isOpen;
-    private BankAccount[] accounts;    
-    private Employee[] employees;
+    public BankAccount[] accounts;    
+    public Employee[] employees;
     
     //private Employee[] employees = {Employee president, Employee vicePresident};
 
@@ -26,20 +26,23 @@ public class Bank
         employees[4] = new Employee("Spongebob", "Squarepants", 12, "Teller #3", 100000);
     }
 
-    public Bank(BankAccount[] b1, Employee[] e1)
+    public Bank(BankAccount[] accounts, Employee[] employees)
     {
         isOpen = true;
-        accounts = b1;
-        employees = e1;
+        this.accounts = accounts;
+        this.employees = employees;
     }
 
     public Bank(double startingAmountForAllAccounts)
     {
         isOpen = true;
+        
+        accounts = new BankAccount[3];
         accounts[0] = new BankAccount(startingAmountForAllAccounts);
         accounts[1] = new BankAccount(startingAmountForAllAccounts);
         accounts[2] = new BankAccount(startingAmountForAllAccounts);
 
+        employees = new Employee[5];
         employees[0] = new Employee();
         employees[1] = new Employee("Sandhya", "Sanapala", 21, "Vice President", 11000);
         employees[2] = new Employee("Sandy", "Cheeks", 10, "Teller #1", 20000);
@@ -55,23 +58,26 @@ public class Bank
     
     public void chargeFees(double fee)
     {
-        accounts[0].withdraw(fee);
-        accounts[1].withdraw(fee);
-        accounts[2].withdraw(fee);
+        for(BankAccount account: accounts)
+        {
+            account.withdraw(fee);
+        }
     }
     
     public void addInterest()
     {
-        accounts[0].deposit(accounts[0].getBalance() * 0.05);
-        accounts[1].deposit(accounts[1].getBalance() * 0.05);
-        accounts[2].deposit(accounts[2].getBalance() * 0.05);        
+        for(BankAccount account : accounts)
+        {
+            account.deposit(account.getBalance() * 0.05);
+        }
     }
     
     public void printAllReports()
     {
-        accounts[0].printInfo();
-        accounts[1].printInfo();
-        accounts[2].printInfo();
+        for(BankAccount account : accounts)
+        {
+            account.printInfo();
+        }
     }
 
     public void fireBigShots()
@@ -88,19 +94,19 @@ public class Bank
 
     public void giveTellersRaise(double raise)
     {
-        employees[2].giveRaise(raise);
-        employees[3].giveRaise(raise);
-        employees[4].giveRaise(raise);
+        for(int i = 2; i <= 4; i++)
+        {
+            employees[i].giveRaise(raise);
+        }
     }
 
     public void printCompanyReport()
     {
         printAllReports();
-        employees[0].printPersonnelReport();
-        employees[1].printPersonnelReport();
-        employees[2].printPersonnelReport();
-        employees[3].printPersonnelReport();
-        employees[4].printPersonnelReport();
+        for(Employee employee : employees)
+        {
+            employee.printPersonnelReport();
+        }
     }
 
 
