@@ -61,6 +61,27 @@ public class IntArrayWorker
       }
     }
   }
+
+  public int getCount(int element)
+  {
+    int count = 0;
+    for (int[] row : matrix)
+    {
+      for (int position : row)
+      {
+        if(position == element)
+        {
+          count++;
+        }
+      }
+    }
+    return count;
+  }
+
+  public int getLargest()
+  {
+    return 0;
+  }
   
   /**
    * print the values in the array in rows and columns
