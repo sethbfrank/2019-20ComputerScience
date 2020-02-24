@@ -80,7 +80,24 @@ public class IntArrayWorker
 
   public int getLargest()
   {
-    return 0;
+    int largest = matrix[0][0];
+    for (int[] row : matrix) {
+      for (int position : row) {
+        if(position > largest) {
+          largest = position;
+        }
+      }
+    }
+    return largest;
+  }
+
+  public int getColTotal(int col)
+  {
+    int total = 0;
+    for(int[] row : matrix) {
+      total+=row[col];
+    }
+    return total;
   }
   
   /**
