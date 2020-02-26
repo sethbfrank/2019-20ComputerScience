@@ -126,7 +126,7 @@ public class PictureTester
   public static void testMyCollage()
   {
     Picture canvas = new Picture("640x480.jpg");
-    canvas.myCollage();
+    canvas.createCollage();
     canvas.explore();
   }
   
@@ -135,6 +135,14 @@ public class PictureTester
   {
     Picture swan = new Picture("swan.jpg");
     swan.edgeDetection(10);
+    swan.explore();
+  }
+
+  /** Method to test edgeDetection */
+  public static void testEdgeDetection2()
+  {
+    Picture swan = new Picture("swan.jpg");
+    swan.edgeDetection2(10);
     swan.explore();
   }
   
@@ -161,9 +169,9 @@ public class PictureTester
     //testMirrorGull();
     //testMirrorDiagonal();
     //testCollage();
-    testMyCollage();
+    //testMyCollage();
     //testCopy();
-    //testEdgeDetection();
+    testEdgeDetection();
     //testEdgeDetection2();
     //testChromakey();
     //testEncodeAndDecode();
