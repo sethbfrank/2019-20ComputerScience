@@ -350,21 +350,56 @@ public class Picture extends SimplePicture
     }   
   }
 
+  public void copy(Picture fromPic, int startRow, int startCol, int endRow, int endCol)
+  {
+    Pixel fromPixel = null;
+    Pixel toPixel = null;
+    Pixel[][] toPixels = this.getPixels2D();
+    Pixel[][] fromPixels = fromPic.getPixels2D();
+    for (int fromRow = 0, toRow = startRow; 
+         fromRow < endRow &&
+         toRow < toPixels.length; 
+         fromRow++, toRow++)
+    {
+      for (int fromCol = 0, toCol = startCol; 
+           fromCol < endCol &&
+           toCol < toPixels[0].length;  
+           fromCol++, toCol++)
+      {
+        fromPixel = fromPixels[fromRow][fromCol];
+        toPixel = toPixels[toRow][toCol];
+        toPixel.setColor(fromPixel.getColor());
+      }
+    }   
+  }
+
   /** Method to create a collage of several pictures */
   public void createCollage()
   {
     Picture flower1 = new Picture("flower1.jpg");
     Picture flower2 = new Picture("flower2.jpg");
-    this.copy(flower1,0,0);
-    this.copy(flower2,100,0);
-    this.copy(flower1,200,0);
+    this.copy(flower1,0,0,50,50);
+    this.copy(flower2,100,0,50,50);
+    this.copy(flower1,200,0,50,50);
     Picture flowerNoBlue = new Picture(flower2);
     flowerNoBlue.zeroBlue();
-    this.copy(flowerNoBlue,300,0);
-    this.copy(flower1,400,0);
-    this.copy(flower2,500,0);
+    this.copy(flowerNoBlue,300,0,50,50);
+    this.copy(flower1,400,0,50,50);
+    this.copy(flower2,500,0,50,50);
     this.mirrorVertical();
     this.write("collage.jpg");
+  }
+
+  public void myCollage()
+  {
+    Picture temple = new Picture("temple.jpg");
+    Picture mark = new Picture("blue-mark.jpg");
+    Picture mark2 = new Picture("blue-mark2.0.jfif");
+    this.copy(temple,0,0,50,50);
+    this.copy(mark,100,0,50,50);
+    this.copy(mark2,200,0,50,50);
+    temple.mirrorTemple();
+    this.copy(temple, 0, 200);
   }
   
   
