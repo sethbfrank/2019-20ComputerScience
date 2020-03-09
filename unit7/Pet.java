@@ -1,8 +1,7 @@
-
 /**
  * The Pet class - a start of the Pet Inheritance Hierarchy
  */
-public abstract class Pet
+public class Pet
 {
     //fields
     private String name;
@@ -25,7 +24,8 @@ public abstract class Pet
         return name;
     }
     
-    public abstract String speak();
-    
-    
+    public String speak()
+    {
+        return "default pet sound";
+    }
 }
