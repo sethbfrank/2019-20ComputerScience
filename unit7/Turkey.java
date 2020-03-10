@@ -17,7 +17,7 @@ public class Turkey extends Pet
     //methods
     public String speak()
     {
-        return "Gobble gobble";
+        return "Gobble Gobble";
     }
     
 }
