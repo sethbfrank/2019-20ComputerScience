@@ -11,7 +11,7 @@ public class Zoo
         {
             if(i < 5)
             {
-                theZoo[i] = new Pet();
+                theZoo[i] = new LoudTurkey();
             } else {
                 theZoo[i] = new Turkey();
             }            
@@ -28,7 +28,7 @@ public class Zoo
             num = Math.random();
             if(num < 0.5)
             {
-                theZoo[i] = new Pet();
+                theZoo[i] = new LoudTurkey();
             } else {
                 theZoo[i] = new Turkey();
             }
