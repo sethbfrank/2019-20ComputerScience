@@ -24,5 +24,7 @@ public abstract class Pet
         return name;
     }
     
-    public abstract String speak();    
+    public abstract String speak();
+
+    public abstract boolean urinate();    
 }

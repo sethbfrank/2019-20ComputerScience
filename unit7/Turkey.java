@@ -19,5 +19,10 @@ public class Turkey extends Pet
     {
         return "Gobble Gobble";
     }
+
+    public boolean urinate()
+    {
+        return Math.random() < 0.3;
+    }
     
 }

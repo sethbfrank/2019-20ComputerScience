@@ -18,4 +18,9 @@ public class LoudTurkey extends Turkey
     {
         return super.speak() + " " + super.speak();
     }
+
+    public boolean urinate()
+    {
+        return super.urinate();
+    }
 }

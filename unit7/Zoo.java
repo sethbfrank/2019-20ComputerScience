@@ -43,4 +43,12 @@ public class Zoo
             System.out.println(pet.speak());
         }
     }
+
+    public void petsUrinate()
+    {
+        for(Pet pet : theZoo)
+        {
+            System.out.println(pet.urinate());
+        }
+    }
 }
